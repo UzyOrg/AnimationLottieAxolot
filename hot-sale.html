@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./hot-sale.css" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web/build/player/lottie.min.js"></script>
+  </head>
+  <body>
+    <div class="container piñataPage">
+      <h2>¡<span>Rompe</span> la piñata y descubre tu premio!</h2>
+      <lottie-player
+        class="lottie"
+        src="https://lottie.host/2a7b829d-0ce2-4e26-a839-ad29a6482498/aXqdHDmDeh.json"
+        background="transparent"
+        speed="1"
+        direction="1"
+        mode="normal"
+        loop
+        autoplay
+      ></lottie-player>
+      <lottie-player
+        class="lottie-ajolote"
+        src="https://lottie.host/566b525f-8a00-4e1a-999d-a9e92bbef116/vinPDWsFsC.json"
+        background="transparent"
+        speed="1"
+        direction="1"
+        mode="normal"
+        loop
+        autoplay
+      ></lottie-player>
+      
+      <div id="lottieAn"></div>
+      <img
+        class="animation-2-ajolote"
+        src="./Ajolote-Parte-2.gif"
+        style="width: 100%"
+      />
+      <img
+        class="animation-confetti"
+        src="./confeti-parte-2.gif"
+        style="width: 100%"
+      />
+      <img
+        class="animation-confetti"
+        id="confetti2"
+        src="./confeti-parte-1.gif"
+        style="width: 100%"
+      />
+      <img class="animation-promos" src="./Promos.png" style="width: 100%" />
+      <img
+        class="animation-obtuviste"
+        src="./Obtuviste.gif"
+        style="width: 100%"
+      />
+      <img
+        class="animation-participa"
+        src="./participa.gif"
+        style="width: 100%"
+      />
+      <img class="regalos regalo-xbox" src="./Xbox.png" />
+      <img class="regalos regalo-ps5" src="./Ps5.png" />
+      <img class="regalos regalo-chrome" src="./chrome.png" />
+      <img class="regalos regalo-nintendo" src="./Nintendo.png" />
+      <img class="regalos regalo-smartwatch" src="./smartwatch.png" />
+      <img class="regalos regalo-tarjeta" src="./tarjeta-de-regalo.png" />
+      <img class="regalos regalo-audifonos" src="./audífonos.png" />
+      <div class="circle1" id="circle1"></div>
+      <div class="circle2" id="circle2"></div>
+      <button
+        class="button-partir scale-in-center-button"
+        onclick="openPromo()"
+      >
+        ¡Abrir piñata!
+      </button>
+      <button
+        class="button-entendido scale-in-center-button"
+        onclick="brazeBridge.logClick();brazeBridge.closeMessage();"
+      >
+        ¡Entendido!
+      </button>
+    </div>
+    <div class="container premioPage" id="premioPage">
+      <p>Premio</p>
+    </div>
+  </body>
+  <script>
+    const gifConfetti2 = document.getElementById("confetti2");
+    gifConfetti2.style.opacity = 0.4;
+    gifConfetti2.style.display = "block";
+    setTimeout(function () {
+      gifConfetti2.style.opacity = 0;
+      setTimeout(function () {
+        gifConfetti2.style.display = "none";
+      }, 700);
+    }, 4000);
+    const buttonPartir = document.querySelector(".button-partir");
+    const buttonEntendido = document.querySelector(".button-entendido");
+    function openPromo() {
+      const circle1 = document.querySelector(".circle1");
+      const circle2 = document.querySelector(".circle2");
+      const gif = document.querySelector(".animation-confetti");
+      const gifAjolote1 = document.querySelector(".lottie-ajolote");
+      const gifAjolote2 = document.querySelector(".animation-2-ajolote");
+      const gifPromo = document.querySelector(".animation-promos");
+      const gifObtuviste = document.querySelector(".animation-obtuviste");
+      const gifParticipa = document.querySelector(".animation-participa");
+      buttonPartir.classList.remove("scale-in-center-button");
+      buttonPartir.classList.add("jello-horizontal");
+      gifAjolote2.style.display = "block";
+      gifObtuviste.style.display = "block";
+      gifParticipa.style.display = "block";
+      setTimeout(function () {
+        gifAjolote1.style.display = "none";
+        gifAjolote2.style.opacity = 1;
+      }, 200);
+      setTimeout(function () {
+        gif.style.display = "block";
+      }, 1000);
+      setTimeout(function () {
+        circle1.style.display = "block";
+        circle2.style.display = "block";
+        gifPromo.style.display = "block";
+
+        setTimeout(function () {
+          buttonEntendido.style.display = "block";
+        }, 500);
+      }, 1300);
+    }
+    setTimeout(function () {
+      buttonPartir.style.display = "block";
+    }, 5000);
+  </script>
+</html>
